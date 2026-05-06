@@ -67,7 +67,7 @@ export function Header() {
             {navItems.map((item) => (
               <Link
                 key={item.label}
-                href={item.label === "Product" ? "/#product" : item.href}
+                href={item.href}
                 target={item.external ? "_blank" : undefined}
                 rel={item.external ? "noreferrer" : undefined}
                 onClick={closeMenu}
@@ -76,7 +76,7 @@ export function Header() {
                 {item.label}
               </Link>
             ))}
-            <Button href="/dashboard" className="mt-2 w-full" external={false}>
+            <Button href="/dashboard" className="mt-2 w-full">
               Open Dashboard
             </Button>
           </nav>

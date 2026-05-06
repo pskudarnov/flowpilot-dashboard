@@ -3,14 +3,25 @@ import { cn } from "@/lib/utils";
 
 type ButtonVariant = "primary" | "secondary" | "ghost";
 
-type Props = {
+type SharedButtonProps = {
   children: React.ReactNode;
   className?: string;
-  external?: boolean;
-  href?: string;
-  type?: "button" | "submit" | "reset";
   variant?: ButtonVariant;
 };
+
+type LinkButtonProps = SharedButtonProps & {
+  external?: boolean;
+  href: string;
+  type?: never;
+};
+
+type NativeButtonProps = SharedButtonProps & {
+  external?: never;
+  href?: never;
+  type?: "button" | "submit" | "reset";
+};
+
+type ButtonProps = LinkButtonProps | NativeButtonProps;
 
 const variants: Record<ButtonVariant, string> = {
   primary:
@@ -27,7 +38,7 @@ export function Button({
   external,
   type = "button",
   variant = "primary",
-}: Props) {
+}: ButtonProps) {
   const classes = cn(
     "inline-flex min-h-10 items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold",
     "transition duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#080a10]",

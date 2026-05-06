@@ -5,7 +5,7 @@ export type NavItem = {
 };
 
 export const navItems: NavItem[] = [
-  { label: "Product", href: "#product" },
+  { label: "Product", href: "/#product" },
   { label: "Dashboard", href: "/dashboard" },
   { label: "Pricing", href: "/pricing" },
   { label: "GitHub", href: "https://github.com/pskudarnov/flowpilot-dashboard", external: true },

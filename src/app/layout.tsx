@@ -3,7 +3,7 @@ import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 
-const siteUrl = "http://64.188.63.171:3210";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://64.188.63.171:3210";
 const title = "FlowPilot — SaaS Analytics Dashboard Demo";
 const description =
   "A production-ready Next.js SaaS analytics dashboard demo built with TypeScript, Tailwind CSS and Recharts.";
