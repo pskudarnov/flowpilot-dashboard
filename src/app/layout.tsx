@@ -29,8 +29,8 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className="bg-[#090b12] text-zinc-100 antialiased">
-        <div className="min-h-screen bg-[radial-gradient(circle_at_20%_0%,rgba(34,211,238,0.08),transparent_35%),radial-gradient(circle_at_80%_10%,rgba(99,102,241,0.08),transparent_35%)]">
+      <body className="bg-background text-zinc-100 antialiased">
+        <div className="min-h-screen overflow-hidden bg-[radial-gradient(circle_at_18%_-8%,rgba(34,211,238,0.16),transparent_30%),radial-gradient(circle_at_85%_4%,rgba(168,85,247,0.12),transparent_28%),linear-gradient(180deg,#080a10_0%,#0b0f19_48%,#080a10_100%)]">
           <Header />
           <main>{children}</main>
           <Footer />
