@@ -15,7 +15,18 @@ export default function HomePage() {
       <Features />
       <section id="features" className="scroll-mt-24 py-16">
         <div className="mx-auto w-full max-w-6xl px-6 md:px-10">
-          <h2 className="mb-6 text-3xl font-semibold text-zinc-50">Product preview</h2>
+          <div className="mb-7 max-w-2xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-cyan-200/80">
+              Interface preview
+            </p>
+            <h2 className="mt-3 text-3xl font-semibold text-zinc-50">
+              A dashboard that feels used
+            </h2>
+            <p className="mt-4 leading-7 text-zinc-400">
+              The preview carries real product cues: revenue movement, activation health, task load
+              and status context.
+            </p>
+          </div>
           <ProductPreview />
         </div>
       </section>

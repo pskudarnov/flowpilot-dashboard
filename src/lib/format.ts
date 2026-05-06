@@ -9,3 +9,5 @@ export const currency = (value: number) =>
   }).format(value);
 
 export const percent = (value: number) => `${value.toFixed(1)}%`;
+
+export const signedNumber = (value: number) => `${value > 0 ? "+" : ""}${value}`;

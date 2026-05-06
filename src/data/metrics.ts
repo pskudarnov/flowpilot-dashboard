@@ -1,8 +1,32 @@
 export const kpiCards = [
-  { label: "Revenue growth", value: 12.4, delta: "+2.1 pts" },
-  { label: "Activation rate", value: 68.4, delta: "+4.2%" },
-  { label: "Retention", value: 91.2, delta: "+1.1%" },
-  { label: "Open tasks", value: 24, delta: "-8" },
+  {
+    label: "Revenue growth",
+    value: 12.4,
+    delta: "+2.1 pts",
+    note: "vs. previous month",
+    tone: "cyan",
+  },
+  {
+    label: "Activation rate",
+    value: 68.4,
+    delta: "+4.2%",
+    note: "new users reaching value",
+    tone: "emerald",
+  },
+  {
+    label: "Retention",
+    value: 91.2,
+    delta: "+1.1%",
+    note: "healthy accounts retained",
+    tone: "violet",
+  },
+  {
+    label: "Open tasks",
+    value: 24,
+    delta: "-8",
+    note: "critical delivery items",
+    tone: "amber",
+  },
 ] as const;
 
 export const revenueSeries = [
@@ -18,17 +42,37 @@ export const revenueSeries = [
 ];
 
 export const conversionSeries = [
-  { week: "W1", signups: 420, activation: 62 },
-  { week: "W2", signups: 510, activation: 65 },
-  { week: "W3", signups: 498, activation: 67 },
-  { week: "W4", signups: 560, activation: 68 },
-  { week: "W5", signups: 590, activation: 69 },
-  { week: "W6", signups: 640, activation: 71 },
+  { week: "W1", signups: 420, activation: 260 },
+  { week: "W2", signups: 510, activation: 332 },
+  { week: "W3", signups: 498, activation: 334 },
+  { week: "W4", signups: 560, activation: 381 },
+  { week: "W5", signups: 590, activation: 407 },
+  { week: "W6", signups: 640, activation: 454 },
 ];
 
 export const activityFeed = [
-  "Checkout funnel conversion improved by 3.2%",
-  "New onboarding experiment launched for SMB cohort",
-  "5 critical tasks moved to Done this week",
-  "Retention alert resolved for inactive segment",
+  {
+    title: "Checkout funnel improved",
+    detail: "Conversion rose by 3.2% after copy and trust badge updates.",
+    time: "12 min ago",
+    type: "Insight",
+  },
+  {
+    title: "SMB onboarding experiment launched",
+    detail: "Variant B is now live for 18% of qualified traffic.",
+    time: "1 hr ago",
+    type: "Experiment",
+  },
+  {
+    title: "Delivery risk reduced",
+    detail: "5 critical tasks moved to Done this week.",
+    time: "Today",
+    type: "Ops",
+  },
+  {
+    title: "Retention alert resolved",
+    detail: "Inactive segment returned to the expected range.",
+    time: "Yesterday",
+    type: "Health",
+  },
 ] as const;
