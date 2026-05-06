@@ -1,14 +1,16 @@
 # FlowPilot — SaaS Analytics Dashboard
 
-FlowPilot is a production-ready demo SaaS analytics dashboard built for portfolio showcase.
+FlowPilot is a portfolio-ready SaaS analytics dashboard demo built with Next.js, TypeScript and Tailwind CSS.
 
-Live demo: http://64.188.63.171:3210
+Live demo:
+- Production: https://flowpilot-demo.vercel.app
+- Local fallback: http://64.188.63.171:3210
 
 ## Stack
 
 - Next.js App Router
 - TypeScript
-- Tailwind CSS
+- Tailwind CSS v4
 - Recharts
 - lucide-react
 - clsx
@@ -22,6 +24,9 @@ Live demo: http://64.188.63.171:3210
 - Mock-data driven architecture
 - SEO metadata, robots, sitemap, OG image
 - Accessibility basics (semantic landmarks, headings, focus-visible, readable labels)
+- Active navigation states
+- Reduced-motion friendly transitions and reveal animations
+- Mobile task cards + desktop analytics table layout
 
 ## Pages
 
@@ -38,6 +43,21 @@ Live demo: http://64.188.63.171:3210
 - `src/data/*` mock data
 - `src/lib/*` formatting and utilities
 
+## Environment
+
+Create `.env.local`:
+
+```bash
+cp .env.example .env.local
+```
+
+Variables:
+
+```env
+NEXT_PUBLIC_SITE_URL=https://flowpilot-demo.vercel.app
+PORT=3210
+```
+
 ## Run locally
 
 ```bash
@@ -53,13 +73,47 @@ npm run typecheck
 npm run build
 npm run format
 npm run format:check
+npm run test:smoke
 ```
+
+## Smoke tests
+
+Simple smoke coverage exists for:
+
+- `/`
+- `/dashboard`
+- `/pricing`
+
+Run after starting the app:
+
+```bash
+npm run dev
+npm run test:smoke
+```
+
+## Lighthouse / SEO checklist
+
+Before deployment:
+
+- Verify metadataBase uses production domain
+- Check canonical URLs
+- Validate OpenGraph preview
+- Confirm robots + sitemap accessibility
+- Run Lighthouse on desktop and mobile
+- Validate keyboard navigation and focus states
+- Check contrast in dark mode
+- Verify responsive layout at 375px, 768px, 1280px+
+- Confirm no console errors during navigation
 
 ## Deployment notes
 
-- PM2 process name: `flowpilot-dashboard`
-- Port: `3210`
-- Start command:
+Recommended:
+
+- Vercel for portfolio deployment
+- Node.js >=20.9.0
+- PM2 optional for VPS deployment
+
+Example PM2 command:
 
 ```bash
 PORT=3210 pm2 start npm --name flowpilot-dashboard -- start
@@ -73,3 +127,4 @@ PORT=3210 pm2 start npm --name flowpilot-dashboard -- start
 - Charts and metrics visualization
 - TypeScript component architecture
 - Accessibility and SEO basics
+- Production-style frontend polish
