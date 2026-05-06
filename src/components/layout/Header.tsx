@@ -2,11 +2,22 @@
 
 import Link from "next/link";
 import { ArrowRight, Menu, X } from "lucide-react";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { navItems } from "@/data/navigation";
 import { Button } from "@/components/ui/Button";
+import { navItems } from "@/data/navigation";
+import { cn } from "@/lib/utils";
+
+function isNavItemActive(href: string, pathname: string) {
+  if (href === "/#product") {
+    return pathname === "/";
+  }
+
+  return pathname === href || pathname.startsWith(`${href}/`);
+}
 
 export function Header() {
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
 
   const closeMenu = () => setIsOpen(false);
@@ -25,18 +36,28 @@ export function Header() {
           <span>FlowPilot</span>
         </Link>
 
-        <nav className="hidden items-center gap-6 md:flex" aria-label="Main navigation">
-          {navItems.map((item) => (
-            <Link
-              key={item.label}
-              href={item.href}
-              className="text-sm font-medium text-zinc-400 transition hover:text-zinc-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#080a10]"
-              target={item.external ? "_blank" : undefined}
-              rel={item.external ? "noreferrer" : undefined}
-            >
-              {item.label}
-            </Link>
-          ))}
+        <nav className="hidden items-center gap-2 md:flex" aria-label="Main navigation">
+          {navItems.map((item) => {
+            const isActive = !item.external && isNavItemActive(item.href, pathname);
+
+            return (
+              <Link
+                key={item.label}
+                href={item.href}
+                aria-current={isActive ? "page" : undefined}
+                className={cn(
+                  "rounded-full px-3 py-2 text-sm font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#080a10]",
+                  isActive
+                    ? "bg-cyan-300/10 text-cyan-100 shadow-[inset_0_0_0_1px_rgba(103,232,249,0.18)]"
+                    : "text-zinc-400 hover:bg-white/[0.04] hover:text-zinc-100",
+                )}
+                target={item.external ? "_blank" : undefined}
+                rel={item.external ? "noreferrer" : undefined}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
         </nav>
 
         <div className="hidden md:block">
@@ -54,7 +75,7 @@ export function Header() {
           aria-controls="mobile-nav-panel"
           onClick={() => setIsOpen((prev) => !prev)}
         >
-          {isOpen ? <X className="size-5" /> : <Menu className="size-5" />}
+          {isOpen ? <X className="size-5" aria-hidden /> : <Menu className="size-5" aria-hidden />}
         </button>
       </div>
 
@@ -64,18 +85,28 @@ export function Header() {
           className="reveal border-t border-white/10 bg-[#080a10]/96 px-6 py-4 shadow-2xl md:hidden"
         >
           <nav className="flex flex-col gap-2" aria-label="Mobile navigation">
-            {navItems.map((item) => (
-              <Link
-                key={item.label}
-                href={item.href}
-                target={item.external ? "_blank" : undefined}
-                rel={item.external ? "noreferrer" : undefined}
-                onClick={closeMenu}
-                className="rounded-lg px-3 py-2 text-sm font-medium text-zinc-300 transition hover:bg-white/[0.06] hover:text-zinc-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300"
-              >
-                {item.label}
-              </Link>
-            ))}
+            {navItems.map((item) => {
+              const isActive = !item.external && isNavItemActive(item.href, pathname);
+
+              return (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  aria-current={isActive ? "page" : undefined}
+                  target={item.external ? "_blank" : undefined}
+                  rel={item.external ? "noreferrer" : undefined}
+                  onClick={closeMenu}
+                  className={cn(
+                    "rounded-lg px-3 py-2 text-sm font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300",
+                    isActive
+                      ? "bg-cyan-300/10 text-cyan-100"
+                      : "text-zinc-300 hover:bg-white/[0.06] hover:text-zinc-100",
+                  )}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
             <Button href="/dashboard" className="mt-2 w-full">
               Open Dashboard
             </Button>
