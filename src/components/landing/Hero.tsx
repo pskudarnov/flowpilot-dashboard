@@ -9,29 +9,29 @@ export function Hero() {
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-200/50 to-transparent" />
       <div className="mx-auto grid w-full max-w-6xl gap-10 px-6 md:px-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
         <div className="reveal">
-          <Badge>Portfolio-ready SaaS analytics</Badge>
+          <Badge>Portfolio-ready SaaS reporting</Badge>
           <h1 className="mt-5 max-w-3xl text-4xl font-semibold leading-[1.05] text-zinc-50 sm:text-5xl lg:text-6xl">
-            Analytics that keep product teams in flow.
+            Revenue reporting for product-led SaaS teams.
           </h1>
           <p className="mt-6 max-w-xl text-base leading-7 text-zinc-400 sm:text-lg">
-            FlowPilot is a lightweight SaaS analytics dashboard concept for tracking revenue,
-            activation, retention and delivery health in one clean interface.
+            FlowPilot brings revenue movement, trial activation, account retention and operating
+            work into a focused dashboard surface.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Button href="/dashboard">
-              View dashboard
+              Open dashboard
               <ArrowRight className="size-4" aria-hidden />
             </Button>
             <Button href="/pricing" variant="secondary">
               <PlayCircle className="size-4" aria-hidden />
-              See pricing
+              Compare plans
             </Button>
           </div>
           <dl className="mt-10 grid max-w-lg grid-cols-3 gap-4 border-t border-white/10 pt-6">
             {[
               ["9", "months trend"],
               ["4", "KPI signals"],
-              ["100%", "mock-data driven"],
+              ["3", "core routes"],
             ].map(([value, label]) => (
               <div key={label}>
                 <dt className="text-xl font-semibold text-zinc-50">{value}</dt>

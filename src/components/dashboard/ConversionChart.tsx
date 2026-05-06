@@ -31,8 +31,8 @@ export function ConversionChart() {
       <Card className="p-5">
         <div className="mb-4 flex items-start justify-between gap-4">
           <div>
-            <h3 className="text-base font-semibold text-zinc-100">Signups & activation</h3>
-            <p className="mt-1 text-sm text-zinc-500">Weekly funnel health</p>
+            <h3 className="text-base font-semibold text-zinc-100">Trial conversion</h3>
+            <p className="mt-1 text-sm text-zinc-500">Weekly signups reaching first report</p>
           </div>
           <span className="rounded-full bg-cyan-300/10 px-3 py-1 text-xs font-medium text-cyan-100">
             Loading
@@ -47,11 +47,11 @@ export function ConversionChart() {
     <Card className="reveal reveal-delay-2 p-5">
       <div className="mb-4 flex items-start justify-between gap-4">
         <div>
-          <h3 className="text-base font-semibold text-zinc-100">Signups & activation</h3>
-          <p className="mt-1 text-sm text-zinc-500">Weekly funnel health</p>
+          <h3 className="text-base font-semibold text-zinc-100">Trial conversion</h3>
+          <p className="mt-1 text-sm text-zinc-500">Weekly signups reaching first report</p>
         </div>
         <span className="rounded-full bg-violet-300/10 px-3 py-1 text-xs font-medium text-violet-100">
-          71% active
+          71% activated
         </span>
       </div>
       <div className="h-[280px] w-full">

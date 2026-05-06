@@ -12,7 +12,9 @@ export function PricingPreview() {
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-cyan-200/80">
               Pricing
             </p>
-            <h2 className="mt-3 text-3xl font-semibold text-zinc-50">Simple plans, clear scope</h2>
+            <h2 className="mt-3 text-3xl font-semibold text-zinc-50">
+              Clear plans for a SaaS buying flow
+            </h2>
           </div>
           <Button href="/pricing" variant="secondary">
             Compare plans

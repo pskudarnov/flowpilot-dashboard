@@ -10,12 +10,12 @@ export function ProductPreview() {
         <div className="flex items-center justify-between border-b border-white/10 pb-4">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-cyan-100/70">
-              Live dashboard
+              Workspace preview
             </p>
-            <p className="mt-1 text-sm text-zinc-400">Weekly product health</p>
+            <p className="mt-1 text-sm text-zinc-400">Weekly account health</p>
           </div>
           <div className="inline-flex items-center gap-2 rounded-full border border-emerald-300/20 bg-emerald-300/10 px-3 py-1 text-xs font-medium text-emerald-100">
-            <span className="size-1.5 rounded-full bg-emerald-300" />
+            <span className="size-1.5 rounded-full bg-emerald-300" aria-hidden />
             Stable
           </div>
         </div>
@@ -27,7 +27,7 @@ export function ProductPreview() {
               <ArrowUpRight className="size-4 text-emerald-200" aria-hidden />
             </div>
             <p className="mt-5 text-2xl font-semibold text-zinc-50">$248k</p>
-            <p className="mt-1 text-xs text-zinc-500">MRR · +18.2%</p>
+            <p className="mt-1 text-xs text-zinc-500">MRR movement</p>
           </div>
           <div className="rounded-xl border border-white/10 bg-white/[0.045] p-4">
             <div className="flex items-center justify-between">
@@ -44,8 +44,8 @@ export function ProductPreview() {
         <div className="mt-3 rounded-xl border border-white/10 bg-white/[0.035] p-4">
           <div className="flex items-center justify-between gap-4">
             <div>
-              <p className="text-sm font-medium text-zinc-100">Revenue trend</p>
-              <p className="mt-1 text-xs text-zinc-500">9 month sample</p>
+              <p className="text-sm font-medium text-zinc-100">MRR trend</p>
+              <p className="mt-1 text-xs text-zinc-500">9-month sample</p>
             </div>
             <p className="text-xs text-cyan-100">+21.8%</p>
           </div>
@@ -62,14 +62,14 @@ export function ProductPreview() {
 
         <div className="mt-3 grid gap-3 sm:grid-cols-[1fr_0.78fr]">
           <div className="rounded-xl border border-white/10 bg-white/[0.035] p-4">
-            <p className="text-sm font-medium text-zinc-100">Activation cohort</p>
+            <p className="text-sm font-medium text-zinc-100">Trial activation</p>
             <div className="mt-4 h-2 rounded-full bg-white/10">
               <div className="h-full w-[68%] rounded-full bg-gradient-to-r from-emerald-300 to-cyan-200" />
             </div>
           </div>
           <div className="rounded-xl border border-white/10 bg-white/[0.035] p-4">
-            <p className="text-sm font-medium text-zinc-100">Tasks</p>
-            <p className="mt-3 text-2xl font-semibold text-zinc-50">24</p>
+            <p className="text-sm font-medium text-zinc-100">Escalations</p>
+            <p className="mt-3 text-2xl font-semibold text-zinc-50">7</p>
           </div>
         </div>
       </div>

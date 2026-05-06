@@ -35,8 +35,8 @@ export function RevenueChart() {
       <Card className="p-5">
         <div className="mb-4 flex items-start justify-between gap-4">
           <div>
-            <h3 className="text-base font-semibold text-zinc-100">Monthly revenue</h3>
-            <p className="mt-1 text-sm text-zinc-500">MRR trend in USD</p>
+            <h3 className="text-base font-semibold text-zinc-100">MRR movement</h3>
+            <p className="mt-1 text-sm text-zinc-500">Recognized monthly revenue in USD</p>
           </div>
           <span className="rounded-full bg-cyan-300/10 px-3 py-1 text-xs font-medium text-cyan-100">
             Loading
@@ -51,8 +51,8 @@ export function RevenueChart() {
     <Card className="reveal reveal-delay-1 p-5">
       <div className="mb-4 flex items-start justify-between gap-4">
         <div>
-          <h3 className="text-base font-semibold text-zinc-100">Monthly revenue</h3>
-          <p className="mt-1 text-sm text-zinc-500">MRR trend in USD</p>
+          <h3 className="text-base font-semibold text-zinc-100">MRR movement</h3>
+          <p className="mt-1 text-sm text-zinc-500">Recognized monthly revenue in USD</p>
         </div>
         <span className="rounded-full bg-emerald-300/10 px-3 py-1 text-xs font-medium text-emerald-100">
           +21.8%
@@ -78,7 +78,7 @@ export function RevenueChart() {
             <Tooltip
               contentStyle={{}}
               cursor={{ stroke: "rgba(103,232,249,0.25)", strokeWidth: 1 }}
-              formatter={(value) => [currency(Number(value)), "Revenue"]}
+              formatter={(value) => [currency(Number(value)), "MRR"]}
               wrapperClassName="chart-tooltip"
             />
             <Line

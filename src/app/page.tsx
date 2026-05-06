@@ -20,11 +20,11 @@ export default function HomePage() {
               Interface preview
             </p>
             <h2 className="mt-3 text-3xl font-semibold text-zinc-50">
-              A dashboard that feels used
+              A dashboard that feels operational
             </h2>
             <p className="mt-4 leading-7 text-zinc-400">
-              The preview carries real product cues: revenue movement, activation health, task load
-              and status context.
+              The preview carries product cues a reviewer expects: revenue movement, activation
+              health, account risk and delivery context.
             </p>
           </div>
           <ProductPreview />

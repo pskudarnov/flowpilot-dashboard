@@ -11,11 +11,11 @@ export default function PricingPage() {
           Pricing
         </p>
         <h1 className="mt-4 text-4xl font-semibold leading-tight text-zinc-50 md:text-5xl">
-          Plans that show how the product could scale.
+          Pricing that reads like a real SaaS buying flow.
         </h1>
         <p className="mt-5 max-w-2xl text-lg leading-7 text-zinc-400">
-          FlowPilot keeps pricing simple for the demo, while still presenting the kind of plan
-          hierarchy a real SaaS buyer expects.
+          FlowPilot keeps the commercial model simple while showing the plan hierarchy, conversion
+          paths and buyer context expected in a production product.
         </p>
       </div>
 

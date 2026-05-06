@@ -5,24 +5,24 @@ import { BarChart3, Blocks, Gauge, LineChart, ShieldCheck, Users } from "lucide-
 
 const features = [
   {
-    description: "Revenue, activation and retention signals stay readable at a glance.",
+    description: "Revenue, activation and retention signals stay readable without burying context.",
     icon: Gauge,
     title: "Product health",
   },
   {
-    description: "Charts use realistic time-series data instead of decorative filler.",
+    description: "Charts use realistic time-series samples with clear labels and units.",
     icon: LineChart,
     title: "Trend reporting",
   },
   {
-    description: "Tasks, owners and priorities sit next to the business context.",
+    description: "Owners, priorities and due dates stay connected to account-health context.",
     icon: Users,
     title: "Team execution",
   },
   {
-    description: "Reusable data files keep the demo ready for a future API layer.",
+    description: "Small data modules make the UI easy to swap onto API responses later.",
     icon: Blocks,
-    title: "Mock-data architecture",
+    title: "Data boundaries",
   },
   {
     description: "Cards, tables and navigation keep keyboard and focus states intact.",
@@ -42,8 +42,8 @@ export function Features() {
       <div className="mx-auto w-full max-w-6xl px-6 md:px-10">
         <SectionHeading
           eyebrow="Product system"
-          title="Built for modern product teams"
-          description="Focused UX, reusable components and mock-data architecture ready to evolve into real API integration."
+          title="Built for product and revenue teams"
+          description="Focused UX, reusable components and sample data boundaries that can evolve into real API integration."
         />
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((item, index) => (

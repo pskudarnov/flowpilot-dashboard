@@ -1,7 +1,8 @@
 import type { MetadataRoute } from "next";
+import { getSiteUrl } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "http://64.188.63.171:3210";
+  const base = getSiteUrl();
   return ["", "/dashboard", "/pricing"].map((path) => ({
     url: `${base}${path}`,
     changeFrequency: "weekly",

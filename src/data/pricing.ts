@@ -1,35 +1,40 @@
 export const pricingPlans = [
   {
-    cta: "Start free",
-    description: "A tidy analytics cockpit for founders and solo product builders.",
+    cta: "Open Starter preview",
+    description: "A focused reporting view for founders validating early revenue signals.",
     featured: false,
     name: "Starter",
     price: "$0",
-    points: ["Core KPIs", "Basic charts", "Weekly email digest", "Community support"],
+    points: [
+      "Revenue and activation KPIs",
+      "Basic trend charts",
+      "Weekly snapshot email",
+      "Community support",
+    ],
   },
   {
-    cta: "Open Pro demo",
-    description: "Shared visibility for product squads shipping every week.",
+    cta: "View Pro workspace",
+    description: "Shared reporting for product and revenue teams managing active accounts.",
     featured: true,
     name: "Pro",
     price: "$49",
     points: [
-      "All analytics widgets",
-      "Team activity feed",
-      "Priority alerts",
-      "Export-ready reports",
+      "Full analytics workspace",
+      "Team activity timeline",
+      "Renewal risk alerts",
+      "Board-ready CSV exports",
     ],
   },
   {
-    cta: "Talk to sales",
-    description: "Executive reporting and governance for multi-team organizations.",
+    cta: "Plan rollout",
+    description: "Portfolio-grade executive reporting for larger teams and custom segments.",
     featured: false,
     name: "Scale",
     price: "$149",
     points: [
-      "Multi-team views",
+      "Multi-team workspaces",
       "Custom segments",
-      "Dedicated success",
+      "Dedicated onboarding",
       "Quarterly business reviews",
     ],
   },
@@ -43,7 +48,7 @@ export const pricingFaq = [
   },
   {
     answer:
-      "The current architecture is mock-data driven, with component boundaries that can be connected to API data later.",
+      "Yes. The sample data is already separated from the UI, so the same components can be connected to API responses later.",
     question: "Can this become a real SaaS dashboard?",
   },
   {

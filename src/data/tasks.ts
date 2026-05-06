@@ -6,7 +6,7 @@ export const tasks = [
     priority: "High",
     progress: 72,
     status: "In Progress",
-    title: "Reduce dashboard TTI for mobile",
+    title: "Reduce mobile dashboard interaction delay",
   },
   {
     due: "May 11",
@@ -15,7 +15,7 @@ export const tasks = [
     priority: "Medium",
     progress: 88,
     status: "Review",
-    title: "Refine weekly MRR anomaly alert",
+    title: "Review expansion revenue alert thresholds",
   },
   {
     due: "May 14",
@@ -24,7 +24,7 @@ export const tasks = [
     priority: "Low",
     progress: 26,
     status: "Todo",
-    title: "Polish pricing analytics widgets",
+    title: "Add plan comparison notes for procurement",
   },
   {
     due: "Done",
@@ -33,6 +33,6 @@ export const tasks = [
     priority: "Medium",
     progress: 100,
     status: "Done",
-    title: "Improve activation segment labels",
+    title: "Rename activation cohorts for sales handoff",
   },
 ] as const;

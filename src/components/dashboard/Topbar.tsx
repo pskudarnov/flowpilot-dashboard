@@ -9,12 +9,14 @@ export function Topbar() {
           Executive overview
         </p>
         <h1 className="mt-2 text-2xl font-semibold text-zinc-50 md:text-3xl">Dashboard</h1>
-        <p className="mt-1 text-sm text-zinc-400">SaaS product analytics snapshot</p>
+        <p className="mt-1 text-sm text-zinc-400">
+          Revenue, activation and account health snapshot
+        </p>
       </div>
       <div className="flex flex-wrap items-center gap-2">
         <div className="hidden min-w-48 items-center gap-2 rounded-lg border border-white/10 bg-[#080a10]/70 px-3 py-2 text-sm text-zinc-500 sm:inline-flex">
           <Search className="size-4" aria-hidden />
-          <span>Search signals</span>
+          <span>Search accounts</span>
         </div>
         <Button className="px-3" variant="secondary">
           <Bell className="size-4" aria-hidden />

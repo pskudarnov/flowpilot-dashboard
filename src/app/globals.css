@@ -16,6 +16,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -30,6 +31,7 @@ body {
     "Segoe UI",
     sans-serif;
   text-rendering: optimizeLegibility;
+  overflow-x: hidden;
 }
 
 ::selection {

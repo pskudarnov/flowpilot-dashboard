@@ -14,11 +14,11 @@ export function ActivityFeed() {
     <Card className="reveal reveal-delay-3 p-5">
       <div className="mb-4 flex items-start justify-between gap-4">
         <div>
-          <h3 className="text-base font-semibold text-zinc-100">Team activity</h3>
-          <p className="mt-1 text-sm text-zinc-500">Signals from product and delivery</p>
+          <h3 className="text-base font-semibold text-zinc-100">Operating timeline</h3>
+          <p className="mt-1 text-sm text-zinc-500">Customer, product and revenue events</p>
         </div>
         <span className="rounded-full bg-white/[0.06] px-3 py-1 text-xs font-medium text-zinc-300">
-          Live
+          Today
         </span>
       </div>
       <ul className="space-y-3 text-sm text-zinc-300">

@@ -14,14 +14,14 @@ export function MetricsGrid() {
             Key metrics
           </h2>
         </div>
-        <p className="text-sm text-zinc-500">Updated from mock analytics data</p>
+        <p className="text-sm text-zinc-500">Updated from sample analytics data</p>
       </div>
       <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
         {kpiCards.map((k) => (
           <MetricCard
             key={k.label}
             label={k.label}
-            value={k.label === "Open tasks" ? compactNumber(k.value) : percent(k.value)}
+            value={k.label === "Open escalations" ? compactNumber(k.value) : percent(k.value)}
             delta={k.delta}
             note={k.note}
             tone={k.tone}

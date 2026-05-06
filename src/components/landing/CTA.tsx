@@ -9,13 +9,14 @@ export function CTA() {
           <div className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-cyan-100/60 to-transparent" />
           <div className="mx-auto max-w-2xl text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-cyan-100/75">
-              Demo surface
+              Product walkthrough
             </p>
             <h2 className="mt-4 text-3xl font-semibold text-zinc-50 md:text-4xl">
-              Explore the dashboard like a real product reviewer.
+              Review the dashboard like a real SaaS workspace.
             </h2>
             <p className="mt-4 leading-7 text-zinc-400">
-              See how metrics, charts and team execution data can live in one polished surface.
+              Move through revenue, activation and delivery views with the density expected from a
+              portfolio-grade product demo.
             </p>
             <div className="mt-7">
               <Button href="/dashboard">

@@ -9,11 +9,11 @@ import {
 } from "lucide-react";
 
 const links = [
-  { icon: LayoutDashboard, label: "Overview" },
-  { icon: TrendingUp, label: "Revenue" },
-  { icon: Target, label: "Activation" },
-  { icon: Activity, label: "Retention" },
-  { icon: CheckSquare2, label: "Tasks" },
+  { href: "#overview", icon: LayoutDashboard, label: "Overview" },
+  { href: "#revenue", icon: TrendingUp, label: "Revenue" },
+  { href: "#activation", icon: Target, label: "Activation" },
+  { href: "#timeline", icon: Activity, label: "Timeline" },
+  { href: "#work", icon: CheckSquare2, label: "Work" },
 ] as const;
 
 export function Sidebar() {
@@ -28,7 +28,7 @@ export function Sidebar() {
         </span>
         <div>
           <p className="text-sm font-semibold text-zinc-100">FlowPilot</p>
-          <p className="text-xs text-zinc-500">Analytics OS</p>
+          <p className="text-xs text-zinc-500">Revenue desk</p>
         </div>
       </div>
       <nav
@@ -38,7 +38,7 @@ export function Sidebar() {
         {links.map((item) => (
           <Link
             key={item.label}
-            href="#"
+            href={item.href}
             className="inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-zinc-400 transition hover:bg-white/[0.06] hover:text-zinc-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300"
           >
             <item.icon className="size-4" aria-hidden />
@@ -48,8 +48,10 @@ export function Sidebar() {
       </nav>
       <div className="mt-5 hidden rounded-xl border border-white/10 bg-[#080a10]/70 p-3 lg:block">
         <BarChart3 className="size-4 text-cyan-100" aria-hidden />
-        <p className="mt-3 text-xs font-medium text-zinc-200">Portfolio demo</p>
-        <p className="mt-1 text-xs leading-5 text-zinc-500">Mock data, production UI patterns.</p>
+        <p className="mt-3 text-xs font-medium text-zinc-200">Sample workspace</p>
+        <p className="mt-1 text-xs leading-5 text-zinc-500">
+          Realistic data, production UI patterns.
+        </p>
       </div>
     </aside>
   );

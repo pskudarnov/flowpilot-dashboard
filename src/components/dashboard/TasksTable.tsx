@@ -21,9 +21,9 @@ export function TasksTable() {
       <div className="mb-4 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <h3 id="delivery-tasks-heading" className="text-base font-semibold text-zinc-100">
-            Delivery tasks
+            Operating work
           </h3>
-          <p className="mt-1 text-sm text-zinc-500">Work that can move product signals this week</p>
+          <p className="mt-1 text-sm text-zinc-500">Product work tied to account health</p>
         </div>
         <p className="text-sm text-zinc-500">{tasks.length} tracked tasks</p>
       </div>
@@ -83,7 +83,7 @@ export function TasksTable() {
       </div>
 
       <div
-        className="hidden overflow-x-auto sm:block"
+        className="hidden overflow-x-auto rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 sm:block"
         aria-labelledby="delivery-tasks-heading"
         role="region"
         tabIndex={0}
