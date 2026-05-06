@@ -8,7 +8,7 @@ const plans = [
 
 export function PricingPreview() {
   return (
-    <section className="py-16">
+    <section id="pricing" className="scroll-mt-24 py-16">
       <div className="mx-auto w-full max-w-6xl px-6 md:px-10">
         <h2 className="text-3xl font-semibold text-zinc-50">Simple pricing preview</h2>
         <div className="mt-8 grid gap-4 md:grid-cols-3">

@@ -13,7 +13,7 @@ export default function HomePage() {
         <MetricsGrid />
       </section>
       <Features />
-      <section className="py-16">
+      <section id="features" className="scroll-mt-24 py-16">
         <div className="mx-auto w-full max-w-6xl px-6 md:px-10">
           <h2 className="mb-6 text-3xl font-semibold text-zinc-50">Product preview</h2>
           <ProductPreview />

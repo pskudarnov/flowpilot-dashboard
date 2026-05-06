@@ -12,7 +12,7 @@ const features = [
 
 export function Features() {
   return (
-    <section id="product" className="py-16">
+    <section id="product" className="scroll-mt-24 py-16">
       <div className="mx-auto w-full max-w-6xl px-6 md:px-10">
         <SectionHeading
           title="Built for modern product teams"
