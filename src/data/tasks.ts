@@ -1,0 +1,38 @@
+export const tasks = [
+  {
+    due: "May 9",
+    id: "FP-183",
+    owner: "Pavel",
+    priority: "High",
+    progress: 72,
+    status: "In Progress",
+    title: "Reduce mobile dashboard interaction delay",
+  },
+  {
+    due: "May 11",
+    id: "FP-188",
+    owner: "Nina",
+    priority: "Medium",
+    progress: 88,
+    status: "Review",
+    title: "Review expansion revenue alert thresholds",
+  },
+  {
+    due: "May 14",
+    id: "FP-194",
+    owner: "Alex",
+    priority: "Low",
+    progress: 26,
+    status: "Todo",
+    title: "Add plan comparison notes for procurement",
+  },
+  {
+    due: "Done",
+    id: "FP-201",
+    owner: "Mia",
+    priority: "Medium",
+    progress: 100,
+    status: "Done",
+    title: "Rename activation cohorts for sales handoff",
+  },
+] as const;

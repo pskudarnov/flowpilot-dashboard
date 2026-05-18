@@ -1,0 +1,118 @@
+"use client";
+
+import Link from "next/link";
+import { ArrowRight, Menu, X } from "lucide-react";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
+import { Button } from "@/components/ui/Button";
+import { navItems } from "@/data/navigation";
+import { cn } from "@/lib/utils";
+
+function isNavItemActive(href: string, pathname: string) {
+  if (href === "/#product") {
+    return pathname === "/";
+  }
+
+  return pathname === href || pathname.startsWith(`${href}/`);
+}
+
+export function Header() {
+  const pathname = usePathname();
+  const [isOpen, setIsOpen] = useState(false);
+
+  const closeMenu = () => setIsOpen(false);
+
+  return (
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-[#080a10]/82 backdrop-blur-xl">
+      <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-6 md:px-10">
+        <Link
+          href="/"
+          className="group inline-flex items-center gap-2 text-sm font-semibold text-zinc-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#080a10]"
+          onClick={closeMenu}
+        >
+          <span className="grid size-8 place-items-center rounded-lg border border-cyan-300/25 bg-cyan-300/10 text-cyan-100 shadow-[inset_0_1px_0_rgba(255,255,255,0.1)]">
+            FP
+          </span>
+          <span>FlowPilot</span>
+        </Link>
+
+        <nav className="hidden items-center gap-2 md:flex" aria-label="Main navigation">
+          {navItems.map((item) => {
+            const isActive = !item.external && isNavItemActive(item.href, pathname);
+
+            return (
+              <Link
+                key={item.label}
+                href={item.href}
+                aria-current={isActive ? "page" : undefined}
+                className={cn(
+                  "rounded-full px-3 py-2 text-sm font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#080a10]",
+                  isActive
+                    ? "bg-cyan-300/10 text-cyan-100 shadow-[inset_0_0_0_1px_rgba(103,232,249,0.18)]"
+                    : "text-zinc-400 hover:bg-white/[0.04] hover:text-zinc-100",
+                )}
+                target={item.external ? "_blank" : undefined}
+                rel={item.external ? "noreferrer" : undefined}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
+        </nav>
+
+        <div className="hidden md:block">
+          <Button href="/dashboard">
+            Open Dashboard
+            <ArrowRight className="size-4" aria-hidden />
+          </Button>
+        </div>
+
+        <button
+          type="button"
+          className="inline-flex size-10 items-center justify-center rounded-lg border border-white/10 bg-white/[0.04] text-zinc-200 transition hover:bg-white/[0.08] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#080a10] md:hidden"
+          aria-label={isOpen ? "Close mobile menu" : "Open mobile menu"}
+          aria-expanded={isOpen}
+          aria-controls="mobile-nav-panel"
+          onClick={() => setIsOpen((prev) => !prev)}
+        >
+          {isOpen ? <X className="size-5" aria-hidden /> : <Menu className="size-5" aria-hidden />}
+        </button>
+      </div>
+
+      {isOpen ? (
+        <div
+          id="mobile-nav-panel"
+          className="reveal border-t border-white/10 bg-[#080a10]/96 px-6 py-4 shadow-2xl md:hidden"
+        >
+          <nav className="flex flex-col gap-2" aria-label="Mobile navigation">
+            {navItems.map((item) => {
+              const isActive = !item.external && isNavItemActive(item.href, pathname);
+
+              return (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  aria-current={isActive ? "page" : undefined}
+                  target={item.external ? "_blank" : undefined}
+                  rel={item.external ? "noreferrer" : undefined}
+                  onClick={closeMenu}
+                  className={cn(
+                    "rounded-lg px-3 py-2 text-sm font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300",
+                    isActive
+                      ? "bg-cyan-300/10 text-cyan-100"
+                      : "text-zinc-300 hover:bg-white/[0.06] hover:text-zinc-100",
+                  )}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
+            <Button href="/dashboard" className="mt-2 w-full">
+              Open Dashboard
+            </Button>
+          </nav>
+        </div>
+      ) : null}
+    </header>
+  );
+}
